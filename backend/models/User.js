@@ -33,6 +33,7 @@ const UserSchema = new mongoose.Schema(
       match: [ emailRegex, "Please provide a valid email address" ],
       minlength: [5, "Email address cannot be less than 5 characters"],
       maxlength: [50, "Email address cannot be more than 50 characters"],
+      index: true,
     },
     password: {
       type: String,
