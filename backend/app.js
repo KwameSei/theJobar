@@ -8,6 +8,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import authRoutes from './routes/authRoutes.js';
+// import userRoutes from './routes/userRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 
@@ -30,5 +32,6 @@ app.use('/assets', express.static(path.join(__dirname, 'public/assets/uploads'))
 
 // Routes
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/users', userRoutes);
 
 export default app;

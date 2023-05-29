@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 import dotenv from 'dotenv';
-import e from 'express';
+import express from 'express';
 
 dotenv.config();
 
@@ -82,12 +82,9 @@ export const register = async (req, res) => {
 // Login a user
 export const login = async (req, res) => {
   try {
-    console.log(req.body);
     const { email, password } = req.body; // Get email and password from request body
     const user = await User.findOne({ email: email }); // Find user with email
-    console.log(email);
     if (!user) {
-      console.log(user);
       return res.status(404).json({ message: 'User not found' });
     }
 
