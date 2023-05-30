@@ -10,6 +10,7 @@ import { fileURLToPath } from 'url';
 import authRoutes from './routes/authRoutes.js';
 // import userRoutes from './routes/userRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import postRoutes from './routes/postRoutes.js';
 
 dotenv.config();
 
@@ -33,5 +34,6 @@ app.use('/assets', express.static(path.join(__dirname, 'public/assets/uploads'))
 // Routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/posts', postRoutes);
 
 export default app;
