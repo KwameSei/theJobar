@@ -5,7 +5,18 @@ import upload from '../storage_setup.js';
 
 const router = express.Router();
 
-router.post('/register', upload.single('picture'), register);
+router.post('/register', upload.single('picture'), register, (req, res) => {
+  // Access the uploaded file details
+  const picture = req.file;
+  console.log(picture);
+
+  // Handle the file upload response
+  if (!picture) {
+    res.status(500).json({ error: 'Please upload a file' });
+  } else {
+    res.status(200).json({ message: 'File uploaded successfully', picture });
+  }
+});
 router.post('/login', login);
 // router.post('/login', login);
 // router.get('/logout', logout);

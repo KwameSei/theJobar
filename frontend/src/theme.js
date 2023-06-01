@@ -129,6 +129,11 @@ export const themeSettings = () => {
           dark: tokens.greenAccent[700],
           light: tokens.greenAccent[300],
         },
+        neutral: {
+          main: tokens.grey[500],
+          dark: tokens.redAccent[600],
+          light: tokens.redAccent[400],
+        },
         error: {
           main: tokens.redAccent[500],
           dark: tokens.redAccent[700],
@@ -180,6 +185,11 @@ export const themeSettings = () => {
           main: tokens.greenAccent[500],
           dark: tokens.greenAccent[700],
           light: tokens.greenAccent[300],
+        },
+        neutral: {
+          main: tokens.grey[500],
+          dark: tokens.redAccent[600],
+          light: tokens.redAccent[400],
         },
         error: {
           main: tokens.redAccent[500],
